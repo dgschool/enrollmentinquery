@@ -1,42 +1,42 @@
 package enrollmentinquery.controller;
 
+import java.util.concurrent.CompletableFuture;
+
 import javax.validation.Valid;
 
-//import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import enrollmentinquery.model.Model;
+import enrollmentinquery.service.ServiceClass;
+import enrollmentinquery.utility.Utility;
+
 /*import com.debi.java.builder.model.BuilderModel;
 import com.debi.java.builder.service.BuilderService;*/
 
 @RestController
-@RequestMapping("/enrollmentinquery")
 public class Controller {
-
-	/*
-	private final BuilderService service;
-	 
-    @Autowired
-    BuilderController(BuilderService service) {
+	
+	private final ServiceClass service;
+	private final Utility utility;
+	
+	@Autowired
+	Controller(ServiceClass service, Utility utility) {
         this.service = service;
+        this.utility = utility;
     }
- 
-    @RequestMapping(method = RequestMethod.POST, path="/createBuilder")
+	
+	
+	@RequestMapping(method = RequestMethod.POST, path="/enrollmentinquery")
     @ResponseStatus(HttpStatus.CREATED)
-    BuilderModel create(@RequestBody @Valid BuilderModel builderModel) {
-        return service.create(builderModel);
-    }
-    
-    @RequestMapping(value = "/modifyBuilder/{id}", method = RequestMethod.PUT)
-    @ResponseStatus(HttpStatus.OK)
-    public BuilderModel modifyBuilderByBuilderId(@PathVariable("id") ObjectId id, @Valid @RequestBody BuilderModel builderModel) {
-    	builderModel.setId(id);
-    	return service.update(builderModel);
-    }*/
+	String createInquiry(@RequestBody @Valid Model model) {
+		String createdId = service.create(model);
+		CompletableFuture.runAsync(()-> utility.sendAcknoladgement(createdId,model));
+		return createdId;
+	}
 }
