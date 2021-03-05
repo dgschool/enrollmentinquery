@@ -1,4 +1,4 @@
-package com.debi.java.builder;
+package enrollmentinquery;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

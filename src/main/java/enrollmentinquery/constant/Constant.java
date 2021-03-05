@@ -1,6 +1,6 @@
-package com.debi.java.builder.constant;
+package enrollmentinquery.constant;
 
-public class BuilderConstant {
+public class Constant {
 	
 	public static final int MAX_LENGTH_OVERVIEW = 5000;
 

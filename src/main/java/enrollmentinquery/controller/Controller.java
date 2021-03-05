@@ -1,8 +1,8 @@
-package com.debi.java.builder.controller;
+package enrollmentinquery.controller;
 
 import javax.validation.Valid;
 
-import org.bson.types.ObjectId;
+//import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,14 +12,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.debi.java.builder.model.BuilderModel;
-import com.debi.java.builder.service.BuilderService;
+/*import com.debi.java.builder.model.BuilderModel;
+import com.debi.java.builder.service.BuilderService;*/
 
 @RestController
 @RequestMapping("/api/builder")
-public class BuilderController {
+public class Controller {
 
-	
+	/*
 	private final BuilderService service;
 	 
     @Autowired
@@ -38,5 +38,5 @@ public class BuilderController {
     public BuilderModel modifyBuilderByBuilderId(@PathVariable("id") ObjectId id, @Valid @RequestBody BuilderModel builderModel) {
     	builderModel.setId(id);
     	return service.update(builderModel);
-    }
+    }*/
 }

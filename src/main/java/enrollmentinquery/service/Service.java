@@ -1,11 +1,7 @@
-package com.debi.java.builder.service;
+package enrollmentinquery.service;
 
 
-import com.debi.java.builder.model.BuilderModel;
 
-public interface  BuilderService {
-	BuilderModel create(BuilderModel builderModel);
-	
-	BuilderModel update(BuilderModel builderModel);
-	
+public interface   Service {
+	 
 }

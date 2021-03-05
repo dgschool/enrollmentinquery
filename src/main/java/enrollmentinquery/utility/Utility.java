@@ -1,4 +1,4 @@
-package com.debi.java.builder.utility;
+package enrollmentinquery.utility;
 
 public class Utility {
 
