@@ -1,35 +1,39 @@
-package enrollmentinquery.model;
+package enrollmentinquery.entty;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 import enrollmentinquery.constant.Constant;
 
-public class Model {
-	
-	private int id;
-	@NotNull
+@Entity
+@Table(name=Constant.ENROLMENTINQUERY)
+public class EntityClass {
+
+	@Id
+	@Column(name = Constant.ID)
+	private Long ID;
 	private String F_NAME;
-	@NotNull
 	private String L_NAME;
-	@NotNull
 	private java.util.Date DOB;
-	@Email()
-	@NotNull
 	private String EMAIL;
-	@Size(max = Constant.MOBILENUMBERLENGTH)
-	@NotNull
 	private String MOB;
-	@NotNull
 	private String GRADE;
-	@NotNull
-	private String BRANCH_ID;
 	private String STATUS;
-	@NotNull
-	private String LOGIN_USER;
+	private String BRANCH_ID;
+
+	private String created_by;
+	private java.util.Date created;
+	private String updated_by;
+	private java.util.Date updated;
 	
-	
+	public Long getID() {
+		return ID;
+	}
+	public void setID(Long iD) {
+		ID = iD;
+	}
 	public String getF_NAME() {
 		return F_NAME;
 	}
@@ -78,17 +82,29 @@ public class Model {
 	public void setBRANCH_ID(String bRANCH_ID) {
 		BRANCH_ID = bRANCH_ID;
 	}
-	public int getId() {
-		return id;
+	public String getCreated_by() {
+		return created_by;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setCreated_by(String created_by) {
+		this.created_by = created_by;
 	}
-	public String getLOGIN_USER() {
-		return LOGIN_USER;
+	public java.util.Date getCreated() {
+		return created;
 	}
-	public void setLOGIN_USER(String lOGIN_USER) {
-		LOGIN_USER = lOGIN_USER;
+	public void setCreated(java.util.Date created) {
+		this.created = created;
+	}
+	public String getUpdated_by() {
+		return updated_by;
+	}
+	public void setUpdated_by(String updated_by) {
+		this.updated_by = updated_by;
+	}
+	public java.util.Date getUpdated() {
+		return updated;
+	}
+	public void setUpdated(java.util.Date updated) {
+		this.updated = updated;
 	}
 	
 }
