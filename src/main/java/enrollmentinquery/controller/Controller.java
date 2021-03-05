@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.debi.java.builder.service.BuilderService;*/
 
 @RestController
-@RequestMapping("/api/builder")
+@RequestMapping("/enrollmentinquery")
 public class Controller {
 
 	/*
